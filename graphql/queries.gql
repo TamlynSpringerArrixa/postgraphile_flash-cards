@@ -1,0 +1,25 @@
+query PeopleQuery {
+  allPeople {
+    nodes {
+      id
+      firstName
+      lastName
+    }
+  }
+}
+  
+query CardQuery {
+  cards {
+    nodes {
+      id
+      question
+      answer
+      personId
+      person {
+        firstName
+        id
+        lastName
+      }
+    }
+  }
+}

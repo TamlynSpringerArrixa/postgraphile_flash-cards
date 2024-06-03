@@ -1,0 +1,52 @@
+mutation CreatePerson {
+  createPerson(input: { person: { firstName: "Joe", lastName: "Smith" } }) {
+    person {
+      id 
+      firstName
+      lastName
+    }
+  }
+}
+
+mutation UpdatePerson {
+  updatePersonById(input: { id: 4, personPatch: {firstName: "Joseph" }}) {
+    person {
+      id
+      firstName
+      lastName
+    }
+  }
+}
+
+mutation DeletePerson {
+  deletePersonById(input: { id: 4 }) {
+    person {
+      id
+      firstName
+    }
+  }
+}
+
+mutation CreateCard {
+  createCard (
+    input: {
+    card: {
+      question: "How do you say hello in Swedish?"
+      answer: "hej"
+      personId: 1 
+      spacing: 100
+    	}
+  	}
+  )	{
+    card {
+      id
+      question
+      answer
+      archived
+      reviewAfter
+      spacing
+      easeFactor
+      seq
+    }
+  }
+}
